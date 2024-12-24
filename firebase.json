@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"owasp-insight","appId":"1:94704587583:android:b95fa29bc9b5b46295398a","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"owasp-insight","configurations":{"android":"1:94704587583:android:b95fa29bc9b5b46295398a"}}}}}}

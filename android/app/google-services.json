@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "94704587583",
+    "project_id": "owasp-insight",
+    "storage_bucket": "owasp-insight.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94704587583:android:b95fa29bc9b5b46295398a",
+        "android_client_info": {
+          "package_name": "com.example.owasp_insight"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCBV_vYzPNBKdvX-ZQacJNSA1gGmsiMsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
