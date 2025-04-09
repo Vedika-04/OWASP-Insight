@@ -5,37 +5,69 @@ class OwaspScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('A01. Broken Access Control', style: TextStyle(color: Colors.white)),
+        title: Text('Introduction to OWASP', style: TextStyle(color: Colors.white)),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.only(left:5.0, top:0.0, right:5.0, bottom:0.0),
               child: Image.asset(
-                'assets/images/broken.jpg',
+                'assets/images/owasp logo.png',
                 height: 300,
+                width: 300,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              // padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.only(left:10.0, top:0.0, right:10.0, bottom:10.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Overview Section
-                  sectionTitle('Overview:'),
+                  sectionTitle('OWASP:- (Open Web Application Security Project)'),
                   Text(
-                    'Broken access control vulnerability is a security flaw that allows unauthorized users to access, modify, or delete data they shouldn’t have access to.',
+                    'OWASP is an international non-profit organization dedicated to web application security.'
+                        ' One of OWASP’s core principles is that all of their materials be freely available and easily '
+                        'accessible on their website, making it possible for anyone to improve their own web application '
+                        'security. The materials they offer include documentation, tools, videos, and forums. Perhaps '
+                        'their best-known project is the OWASP Top 10.',
                     style: TextStyle(
                       fontSize: 18,
                       fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.normal,
                       color: Colors.black,
                     ),
                     textAlign: TextAlign.justify,
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: 30),
+                  sectionTitle('What is OWASP Top-10 ?'),
+                  Text(
+                    'The OWASP Top 10 is a regularly updated report outlining security concerns for web application '
+                        'security, focusing on the 10 most critical risks. The report is put together by a team of '
+                        'security experts from all over the world.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                  SizedBox(height: 30),
+                  Text(
+                     'OWASP refers to the Top 10 as an ‘awareness document’ and they recommend that all companies '
+                         'incorporate the report into their processes in order to minimize and/or mitigate security '
+                         'risks.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
                   Text(
                     'This vulnerability is considered one of the most critical web application security risks. It occurs when an application fails to properly enforce access controls, allowing attackers to bypass authorization and perform tasks as if they were legitimate users. ',
                     style: TextStyle(

@@ -37,20 +37,20 @@ class HomeScreen extends StatelessWidget {
         ),
         centerTitle: false,
         actions: [
-          IconButton(
-            onPressed: () async {
-              final Uri url = Uri.parse('https://owasp-risk-rating.com/'); // Replace with your URL
-              // if (await canLaunchUrl(url)) {
-              //   await launchUrl(url, mode: LaunchMode.externalApplication);
-              // } else {
-              //   throw 'Could not launch $url';
-              // }
-            },
-            icon: Icon(
-              Icons.calculate,
-              color: Colors.white,
-            ),
-          ),
+          // IconButton(
+          //   onPressed: () async {
+          //     final Uri url = Uri.parse('https://owasp-risk-rating.com/'); // Replace with your URL
+          //     // if (await canLaunchUrl(url)) {
+          //     //   await launchUrl(url, mode: LaunchMode.externalApplication);
+          //     // } else {
+          //     //   throw 'Could not launch $url';
+          //     // }
+          //   },
+          //   icon: Icon(
+          //     Icons.calculate,
+          //     color: Colors.white,
+          //   ),
+          // ),
           IconButton(
             onPressed: () async {
               await FirebaseAuth.instance.signOut();
@@ -74,6 +74,7 @@ class HomeScreen extends StatelessWidget {
             child: Image.asset(
               'assets/images/vuln.jpg', // Add your image path
               height: 300,
+              // width: 400,
               width: MediaQuery.of(context).size.width, // Dynamically set width
             ),
           ),

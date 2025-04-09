@@ -16,27 +16,80 @@ class _QuizScreenState extends State<QuizScreen> {
         {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
       ],
     },
-    // Add more questions here
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
   ];
 
   int _currentQuestionIndex = 0;
   int _score = 0;
+  int? _selectedAnswerIndex;
+  bool _answered = false;
 
-  void _answerQuestion(bool isCorrect) {
-    if (isCorrect) {
-      _score++;
-    }
+  void _answerQuestion(bool isCorrect, int index) {
+    if (_answered) return;
+
     setState(() {
-      _currentQuestionIndex++;
+      _answered = true;
+      _selectedAnswerIndex = index;
+      if (isCorrect) _score++;
     });
+
+    Future.delayed(Duration(seconds: 1), () {
+      setState(() {
+        _currentQuestionIndex++;
+        _selectedAnswerIndex = null;
+        _answered = false;
+      });
+    });
+  }
+
+  Color _getButtonColor(bool isCorrect, int index) {
+    if (!_answered) return Colors.grey.shade50;
+    if (_selectedAnswerIndex == index) {
+      return isCorrect ? Colors.green : Colors.red;
+    }
+    if (isCorrect) return Colors.green; // Optionally highlight the correct one too
+    return Colors.grey.shade200;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Quiz: Test Your Knowledge'),
-      ),
+      appBar: AppBar(title: Text('Quiz: Test Your Knowledge')),
       body: _currentQuestionIndex < _questions.length
           ? Padding(
         padding: const EdgeInsets.all(16.0),
@@ -55,14 +108,34 @@ class _QuizScreenState extends State<QuizScreen> {
             SizedBox(height: 20),
             ...(_questions[_currentQuestionIndex]['answers']
             as List<Map<String, Object>>)
+                .asMap()
+                .entries
                 .map(
-                  (answer) => Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: ElevatedButton(
-                  onPressed: () => _answerQuestion(answer['isCorrect'] as bool),
-                  child: Text(answer['text'] as String),
-                ),
-              ),
+                  (entry) {
+                final index = entry.key;
+                final answer = entry.value;
+                final isCorrect = answer['isCorrect'] as bool;
+                final text = answer['text'] as String;
+
+                return Container(
+                  width: double.infinity,
+                  margin: const EdgeInsets.symmetric(vertical: 6),
+                  child: ElevatedButton(
+                    onPressed: () =>
+                        _answerQuestion(isCorrect, index),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                      _getButtonColor(isCorrect, index),
+                      foregroundColor: Colors.black,
+                      padding: EdgeInsets.symmetric(vertical: 14),
+                    ),
+                    child: Text(
+                      text,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                );
+              },
             )
                 .toList(),
           ],
@@ -87,6 +160,8 @@ class _QuizScreenState extends State<QuizScreen> {
                 setState(() {
                   _currentQuestionIndex = 0;
                   _score = 0;
+                  _selectedAnswerIndex = null;
+                  _answered = false;
                 });
               },
               child: Text('Restart Quiz'),
