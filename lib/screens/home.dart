@@ -8,6 +8,8 @@ import 'module1.dart'; // Import the screens for each module
 import 'module2.dart';
 import 'module3.dart';
 import 'module4.dart'; // Import module screens
+import 'module5.dart';
+import 'module6.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
