@@ -5,7 +5,7 @@ class Quiz4Screen extends StatefulWidget {
   _QuizScreenState createState() => _QuizScreenState();
 }
 
-class _QuizScreenState extends State<QuizScreen> {
+class _QuizScreenState extends State<Quiz4Screen> {
   final List<Map<String, Object>> _questions = [
     {
       'questionText': 'What does OWASP stand for?',

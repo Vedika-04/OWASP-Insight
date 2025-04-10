@@ -87,30 +87,40 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           SingleChildScrollView(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(2.0),
             child: Image.asset(
               'assets/images/vuln.jpg', // Add your image path
-              height: 300,
+              height: 250,
               // width: 400,
               width: MediaQuery.of(context).size.width, // Dynamically set width
             ),
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: 12, // Include the 10 modules + Quiz
+              itemCount: 22, // Include the 10 modules + Quiz
               itemBuilder: (context, index) {
                 final moduleNames = [
                   'Introduction to OWASP',
                   'A01. Broken Access Control',
+                  'A01. Practice Quiz',
                   'A02. Cryptographic Failure',
+                  'A02. Practice Quiz',
                   'A03. Injection',
+                  'A03. Practice Quiz',
                   'A04. Insecure Design',
+                  'A04. Practice Quiz',
                   'A05. Security Misconfiguration',
+                  'A05. Practice Quiz',
                   'A06. Vulnerable and Outdated components',
+                  'A06. Practice Quiz',
                   'A07. Identification and Authentication Failure',
+                  'A07. Practice Quiz',
                   'A08. Software and Data Integrity Failures',
+                  'A08. Practice Quiz',
                   'A09. Security Logging and Monitoring Failure',
+                  'A09. Practice Quiz',
                   'A10. Server-Side Request Forgery(SSRF)',
+                  'A10. Practice Quiz',
                   'Quiz: Test Your Knowledge',
                 ];
 
@@ -118,15 +128,26 @@ class HomeScreen extends StatelessWidget {
                 final moduleScreens = [
                   OwaspScreen(),
                   Module1Screen(),
+                  Quiz1Screen(),
                   Module2Screen(),
+                  Quiz2Screen(),
                   Module3Screen(),
+                  Quiz3Screen(),
                   Module4Screen(),
+                  Quiz4Screen(),
                   Module5Screen(),
+                  Quiz5Screen(),
                   Module6Screen(),
+                  Quiz6Screen(),
                   Module7Screen(),
+                  Quiz7Screen(),
                   Module8Screen(),
+                  Quiz8Screen(),
                   Module9Screen(),
+                  Quiz9Screen(),
                   Module10Screen(),
+                  Quiz10Screen(),
+                  QuizScreen(),
                   // Add other module screens here
                   null, // Placeholder for quiz
                 ];
@@ -139,7 +160,7 @@ class HomeScreen extends StatelessWidget {
                       fontFamily: 'Montserrat',
                     ),
                   ),
-                  leading: Icon(index == 11 ? Icons.quiz : Icons.book), // Quiz icon for the last item
+                  leading: Icon(index == 21 ? Icons.quiz : Icons.book), // Quiz icon for the last item
                   onTap: () {
                     if (index < 11) {
                       // Navigate to the corresponding screen

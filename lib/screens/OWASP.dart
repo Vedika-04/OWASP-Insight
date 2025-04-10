@@ -96,27 +96,27 @@ class OwaspScreen extends StatelessWidget {
                     ),
                     textAlign: TextAlign.justify,
                   ),
-                  SizedBox(height: 20),
-
-                  // Key Concepts Section
-                  sectionTitle('Impact and Risks of Broken Access Control:'),
-                  sectionBulletPoints([
-                    '1. The impact of broken access control can be catastrophic for organizations.Unauthorized access '
-                        'to sensitive data can lead to data breaches, identity theft, financial loss, and damage to a '
-                        'company’s reputation.',
-
-                    '2. The risk associated with broken access control is high because it directly affects the confidentiality, integrity, and availability of data. An attacker exploiting this vulnerability can potentially access, modify, or delete any data on the system. This includes user data, system data, application data, and more. The larger the system and the more sensitive the data, the higher the risk.',
-                    '3. Broken access control is a vulnerability that can’t be ignored, and organizations must take proactive steps to identify and mitigate it. This involves regular security testing, proper design and implementation of access controls, and continuous monitoring and updating of security measures.',
-                  ]),
-                  SizedBox(height: 16),
-
-                  // Mitigation Strategies Section
-                  sectionTitle('Examples and Types of Broken Access Control Attacks:'),
-                  sectionBulletPoints([
-                    '1. URL Manipulation:-',
-                    'Ensure proper input validation and data sanitization.',
-                    'Use secure session management practices.',
-                  ]),
+                  // SizedBox(height: 20),
+                  //
+                  // // Key Concepts Section
+                  // sectionTitle('Impact and Risks of Broken Access Control:'),
+                  // sectionBulletPoints([
+                  //   '1. The impact of broken access control can be catastrophic for organizations.Unauthorized access '
+                  //       'to sensitive data can lead to data breaches, identity theft, financial loss, and damage to a '
+                  //       'company’s reputation.',
+                  //
+                  //   '2. The risk associated with broken access control is high because it directly affects the confidentiality, integrity, and availability of data. An attacker exploiting this vulnerability can potentially access, modify, or delete any data on the system. This includes user data, system data, application data, and more. The larger the system and the more sensitive the data, the higher the risk.',
+                  //   '3. Broken access control is a vulnerability that can’t be ignored, and organizations must take proactive steps to identify and mitigate it. This involves regular security testing, proper design and implementation of access controls, and continuous monitoring and updating of security measures.',
+                  // ]),
+                  // SizedBox(height: 16),
+                  //
+                  // // Mitigation Strategies Section
+                  // sectionTitle('Examples and Types of Broken Access Control Attacks:'),
+                  // sectionBulletPoints([
+                  //   '1. URL Manipulation:-',
+                  //   'Ensure proper input validation and data sanitization.',
+                  //   'Use secure session management practices.',
+                  // ]),
                 ],
               ),
             ),

@@ -1,4 +1,4 @@
-module5.dartimport 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class Module7Screen extends StatelessWidget {
   @override
