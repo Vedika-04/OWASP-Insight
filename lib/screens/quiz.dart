@@ -29,9 +29,9 @@ class _QuizScreenState extends State<QuizScreen> {
       'questionText': 'Which of the following is an insecure cryptographic practice?',
       'answers': [
         {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
         {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
         {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
       ],
     },
     {
@@ -46,8 +46,413 @@ class _QuizScreenState extends State<QuizScreen> {
     {
       'questionText': 'What is insecure design?',
       'answers': [
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
         {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
+        {'text': 'Using outdated encryption', 'isCorrect': false},
+        {'text': 'Poor Documentation', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What does OWASP stand for?',
+      'answers': [
+        {'text': 'Open Web Application Security Project', 'isCorrect': true},
+        {'text': 'Online Web Application Security Program', 'isCorrect': false},
+        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
+        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the primary risk of broken access control?',
+      'answers': [
+        {'text': 'Exposing sensitive data', 'isCorrect': false},
+        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
+        {'text': 'Slowing down the website', 'isCorrect': false},
+        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'answers': [
+        {'text': 'Using AES-256', 'isCorrect': false},
+        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
+        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
+        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+      ],
+    },
+    {
+      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'answers': [
+        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
+        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'CSRF', 'isCorrect': false},
+        {'text': 'Buffer Overflow', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is insecure design?',
+      'answers': [
+        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
+        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
         {'text': 'Using outdated encryption', 'isCorrect': false},
         {'text': 'Poor Documentation', 'isCorrect': false},
       ],

@@ -10,6 +10,21 @@ import 'module3.dart';
 import 'module4.dart'; // Import module screens
 import 'module5.dart';
 import 'module6.dart';
+import 'module7.dart';
+import 'module8.dart'; // Import module screens
+import 'module9.dart';
+import 'module10.dart';
+import 'quiz1.dart'; // Import the screens for each module
+import 'quiz2.dart';
+import 'quiz3.dart';
+import 'quiz4.dart'; // Import module screens
+import 'quiz5.dart';
+import 'quiz6.dart';
+import 'quiz7.dart';
+import 'quiz8.dart'; // Import module screens
+import 'quiz9.dart';
+import 'quiz10.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -106,6 +121,12 @@ class HomeScreen extends StatelessWidget {
                   Module2Screen(),
                   Module3Screen(),
                   Module4Screen(),
+                  Module5Screen(),
+                  Module6Screen(),
+                  Module7Screen(),
+                  Module8Screen(),
+                  Module9Screen(),
+                  Module10Screen(),
                   // Add other module screens here
                   null, // Placeholder for quiz
                 ];
