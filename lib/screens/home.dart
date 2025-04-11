@@ -160,9 +160,14 @@ class HomeScreen extends StatelessWidget {
                       fontFamily: 'Montserrat',
                     ),
                   ),
-                  leading: Icon(index == 21 ? Icons.quiz : Icons.book), // Quiz icon for the last item
+                  leading: Icon(
+                    moduleNames[index].toLowerCase().contains('quiz') ? Icons.quiz : Icons.book,
+                    color: moduleNames[index].toLowerCase().contains('quiz')
+                        ? Colors.deepPurple
+                        : Colors.teal,
+                  ), // Quiz icon for the last item
                   onTap: () {
-                    if (index < 11) {
+                    if (index < 21) {
                       // Navigate to the corresponding screen
                       Navigator.push(
                         context,
