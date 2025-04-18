@@ -1,0 +1,2 @@
+C:/Flutter Dev/projects/OWASP-Insight/android/app/.cxx/Debug/4y6c3j34/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Flutter Dev/projects/OWASP-Insight/android/app/.cxx/Debug/4y6c3j34/armeabi-v7a/CMakeFiles/rebuild_cache.dir
