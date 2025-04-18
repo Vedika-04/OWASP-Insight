@@ -12,9 +12,9 @@ class Module1Screen extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(12.0),
               child: Image.asset(
-                'assets/images/injection.jpg',
+                'assets/images/broken.jpg',
                 height: 300,
               ),
             ),

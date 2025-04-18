@@ -8,93 +8,93 @@ class Quiz1Screen extends StatefulWidget {
 class _QuizScreenState extends State<Quiz1Screen> {
   final List<Map<String, Object>> _questions = [
     {
-      'questionText': 'What does OWASP stand for?',
+      'questionText': 'Which of the following is NOT a symptom of broken access control?',
       'answers': [
-        {'text': 'Open Web Application Security Project', 'isCorrect': true},
-        {'text': 'Online Web Application Security Program', 'isCorrect': false},
-        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
-        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+        {'text': 'Unauthorized data exposure', 'isCorrect': false},
+        {'text': 'Unauthorized function execution', 'isCorrect': false},
+        {'text': 'Session fixation', 'isCorrect': false},
+        {'text': 'Path traversal', 'isCorrect': true},
       ],
     },
     {
-      'questionText': 'What is the primary risk of broken access control?',
+      'questionText': 'What is a direct object reference?',
       'answers': [
-        {'text': 'Exposing sensitive data', 'isCorrect': false},
-        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
-        {'text': 'Slowing down the website', 'isCorrect': false},
-        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+        {'text': 'Indirect URL to a resource', 'isCorrect': false},
+        {'text': 'Mapping user input to internal object references', 'isCorrect': true},
+        {'text': 'A method of obfuscating URLs', 'isCorrect': false},
+        {'text': 'Bypassing authentication', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'questionText': 'What should be enforced server-side to prevent broken access control?',
       'answers': [
-        {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
-        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+        {'text': 'UI-level restrictions', 'isCorrect': false},
+        {'text': 'Client-side validations', 'isCorrect': false},
+        {'text': 'Authentication rules', 'isCorrect': false},
+        {'text': 'Authorization rules', 'isCorrect': true},
       ],
     },
     {
-      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'questionText': 'What type of access control grants permissions based on conditions like location/time?',
       'answers': [
-        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
-        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'Role-Based', 'isCorrect': false},
+        {'text': 'Discretionary', 'isCorrect': false},
+        {'text': 'Attribute-Based', 'isCorrect': true},
+        {'text': 'Object-Based', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the principle of least privilege?',
+      'answers': [
+        {'text': 'Grant full access to power users', 'isCorrect': false},
+        {'text': 'Restrict access to minimum necessary permissions', 'isCorrect': true},
+        {'text': 'Give all users admin rights', 'isCorrect': false},
+        {'text': 'Disable all non-essential features', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'In an access control matrix, what do rows typically represent?',
+      'answers': [
+        {'text': 'Roles', 'isCorrect': false},
+        {'text': 'Permissions', 'isCorrect': false},
+        {'text': 'Subjects', 'isCorrect': true},
+        {'text': 'Policies', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Why is client-side access control insecure?',
+      'answers': [
+        {'text': 'It’s harder to configure', 'isCorrect': false},
+        {'text': 'It can be bypassed using dev tools', 'isCorrect': true},
+        {'text': 'It reduces performance', 'isCorrect': false},
+        {'text': 'It increases testing time', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is function-level access control?',
+      'answers': [
+        {'text': 'Limiting access to database queries', 'isCorrect': false},
+        {'text': 'Restricting access to specific functions in the code', 'isCorrect': true},
+        {'text': 'Securing physical access to servers', 'isCorrect': false},
+        {'text': 'Monitoring access logs', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'How does vertical privilege escalation work?',
+      'answers': [
+        {'text': 'User accesses equal-level resources', 'isCorrect': false},
+        {'text': 'Admin becomes a user', 'isCorrect': false},
+        {'text': 'User gains higher-level access than assigned', 'isCorrect': true},
+        {'text': 'User session expires prematurely', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'A user manipulates a URL to change their user ID from 1001 to 1002. What vulnerability does this indicate?',
+      'answers': [
+        {'text': 'XSS', 'isCorrect': false},
         {'text': 'CSRF', 'isCorrect': false},
-        {'text': 'Buffer Overflow', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'What is insecure design?',
-      'answers': [
-        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
-        {'text': 'Using outdated encryption', 'isCorrect': false},
-        {'text': 'Poor Documentation', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'What does OWASP stand for?',
-      'answers': [
-        {'text': 'Open Web Application Security Project', 'isCorrect': true},
-        {'text': 'Online Web Application Security Program', 'isCorrect': false},
-        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
-        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'What is the primary risk of broken access control?',
-      'answers': [
-        {'text': 'Exposing sensitive data', 'isCorrect': false},
-        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
-        {'text': 'Slowing down the website', 'isCorrect': false},
-        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'Which of the following is an insecure cryptographic practice?',
-      'answers': [
-        {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
-        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
-      ],
-    },
-    {
-      'questionText': 'Which attack involves inserting malicious SQL queries?',
-      'answers': [
-        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
-        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
-        {'text': 'CSRF', 'isCorrect': false},
-        {'text': 'Buffer Overflow', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'What is insecure design?',
-      'answers': [
-        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
-        {'text': 'Using outdated encryption', 'isCorrect': false},
-        {'text': 'Poor Documentation', 'isCorrect': false},
+        {'text': 'Broken Access Control', 'isCorrect': true},
+        {'text': 'Insecure Direct Injection', 'isCorrect': false},
       ],
     },
   ];
