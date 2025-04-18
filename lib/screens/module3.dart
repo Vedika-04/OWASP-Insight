@@ -5,18 +5,18 @@ class Module3Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('A01. Broken Access Control', style: TextStyle(color: Colors.white)),
+        title: Text('A03. Injection Vulnerabilities', style: TextStyle(color: Colors.white)),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            // Image Section (optional, can be added if needed)
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Image.asset(
-                'assets/images/injection.png',
+                'assets/images/injection.png', // Replace with actual image if needed
                 height: 300,
-                width: MediaQuery.of(context).size.width,
               ),
             ),
             Padding(
@@ -24,112 +24,108 @@ class Module3Screen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Heading 1
+                  // Overview Section
+                  sectionTitle('Overview:'),
                   Text(
-                    'Overview:',
+                    'Injection attacks involve injecting malicious code into a vulnerable application. The attacker gains control over the application or system, which can lead to severe consequences like data loss, unauthorized access, and more.',
                     style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
                       fontFamily: 'Montserrat',
-                      color: Colors.black87,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
+                    textAlign: TextAlign.justify,
                   ),
-                  SizedBox(height: 8),
-                  // Content under Heading 1 with bold text
-                  Text.rich(
-                    TextSpan(
-                      text: 'Broken Access Control occurs when users can access resources or operations that they should not be allowed to. ',
-                      style: TextStyle(fontSize: 18, fontFamily: 'Montserrat'),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'This vulnerability is critical as it can lead to data leaks, privilege escalation, and unauthorized actions.',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat', fontWeight: FontWeight.bold, color: Colors.brown), // Bold and red
-                        ),
-                      ],
+                  SizedBox(height: 10),
+                  Text(
+                    'This vulnerability is common in applications that fail to properly validate user input or sanitize data before interacting with systems like databases, servers, and other external components.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Montserrat',
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'Injection vulnerabilities can be found in several areas, including SQL injection, XSS, OS command injection, LDAP injection, and more.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Montserrat',
                     ),
                   ),
                   SizedBox(height: 16),
-
-                  // Heading 2
                   Text(
-                    'Key Concepts:',
+                    '"The Open Web Application Security Project (OWASP) lists injection attacks as one of the top security risks in web applications."',
                     style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
                       fontFamily: 'Montserrat',
-                      color: Colors.black87,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.black,
                     ),
+                    textAlign: TextAlign.justify,
                   ),
-                  SizedBox(height: 8),
-                  // Content under Heading 2 with bold and highlighted text
-                  Text.rich(
-                    TextSpan(
-                      text: '1. ',
-                      style: TextStyle(fontSize: 18, fontFamily: 'Montserrat'),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'Role-based access control (RBAC)\n',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat', fontWeight: FontWeight.bold), // Bold
-                        ),
-                        TextSpan(
-                          text: '2. ',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat'),
-                        ),
-                        TextSpan(
-                          text: 'Access Control Lists (ACLs)\n',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat', fontWeight: FontWeight.bold), // Bold
-                        ),
-                        TextSpan(
-                          text: '3. ',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat'),
-                        ),
-                        TextSpan(
-                          text: 'Proper validation of user inputs\n',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat', fontWeight: FontWeight.bold), // Bold
-                        ),
-                      ],
-                    ),
-                  ),
+                  SizedBox(height: 20),
+
+                  // Impact and Risks Section
+                  sectionTitle('Impact and Risks of Injection Attacks:'),
+                  sectionBulletPoints([
+                    '1. Injection attacks can result in unauthorized access to sensitive data, system takeover, and potential data loss or theft.',
+                    '2. The risk is particularly high in environments where user input is not adequately validated or sanitized, allowing attackers to manipulate queries and commands.',
+                    '3. Exploiting injection vulnerabilities can lead to a loss of system integrity, data breaches, and financial or reputational damage.',
+                  ]),
                   SizedBox(height: 16),
 
-                  // Heading 3
-                  Text(
-                    'Mitigation Strategies:',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Montserrat',
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(height: 8),
-                  // Content under Heading 3 with bold text
-                  Text.rich(
-                    TextSpan(
-                      text: 'To mitigate Broken Access Control:\n',
-                      style: TextStyle(fontSize: 18, fontFamily: 'Montserrat'),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: '1. Implement robust RBAC for resource access\n',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat', fontWeight: FontWeight.bold), // Bold
-                        ),
-                        TextSpan(
-                          text: '2. Ensure proper input validation and data sanitization\n',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat', fontWeight: FontWeight.bold), // Bold
-                        ),
-                        TextSpan(
-                          text: '3. Use secure session management practices',
-                          style: TextStyle(fontSize: 18, fontFamily: 'Montserrat', fontWeight: FontWeight.bold), // Bold
-                        ),
-                      ],
-                    ),
-                  ),
+                  // Examples and Types Section
+                  sectionTitle('Examples and Types of Injection Attacks:'),
+                  sectionBulletPoints([
+                    '1. SQL Injection:',
+                    'Manipulating SQL queries to access or modify data.',
+                    'Use parameterized queries to prevent SQL injection.',
+                    '2. Cross-Site Scripting (XSS):',
+                    'Injecting malicious scripts into web pages to hijack user sessions.',
+                    'Sanitize input and use secure coding practices to prevent XSS.',
+                    '3. OS Command Injection:',
+                    'Injecting OS-level commands to execute on the server.',
+                    'Avoid concatenating user input into system commands.',
+                  ]),
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget sectionTitle(String title) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
+        fontFamily: 'Montserrat',
+        color: Colors.black87,
+      ),
+    );
+  }
+
+  Widget sectionBulletPoints(List<String> points, {double gap = 10.0}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: points.map((point) {
+        return Padding(
+          padding: EdgeInsets.symmetric(vertical: gap),
+          child: Text(
+            point,
+            style: TextStyle(
+              fontSize: 18,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        );
+      }).toList(),
     );
   }
 }

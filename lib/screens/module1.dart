@@ -14,7 +14,7 @@ class Module1Screen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Image.asset(
-                'assets/images/broken.jpg',
+                'assets/images/injection.jpg',
                 height: 300,
               ),
             ),

@@ -133,7 +133,7 @@ class Module8Screen extends StatelessWidget {
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.w500,
                 decoration: TextDecoration.underline,
-                color: Colors.grey,
+                color: Colors.blueAccent,
               ),
             ),
           ),
