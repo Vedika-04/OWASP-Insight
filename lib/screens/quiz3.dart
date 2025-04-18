@@ -167,17 +167,19 @@ class _QuizScreenState extends State<Quiz3Screen> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(vertical: 6),
                   child: ElevatedButton(
-                    onPressed: () =>
-                        _answerQuestion(isCorrect, index),
+                    onPressed: () => _answerQuestion(isCorrect, index),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                      _getButtonColor(isCorrect, index),
+                      backgroundColor: _getButtonColor(isCorrect, index),
                       foregroundColor: Colors.black,
-                      padding: EdgeInsets.symmetric(vertical: 14),
+                      padding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                      alignment: Alignment.center,
                     ),
                     child: Text(
                       text,
                       style: TextStyle(fontSize: 16),
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 );

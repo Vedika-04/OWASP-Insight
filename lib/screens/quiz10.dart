@@ -8,93 +8,93 @@ class Quiz10Screen extends StatefulWidget {
 class _QuizScreenState extends State<Quiz10Screen> {
   final List<Map<String, Object>> _questions = [
     {
-      'questionText': 'What does OWASP stand for?',
+      'questionText': 'What does SSRF allow an attacker to do?',
       'answers': [
-        {'text': 'Open Web Application Security Project', 'isCorrect': true},
-        {'text': 'Online Web Application Security Program', 'isCorrect': false},
-        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
-        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+        {'text': 'Redirect a user to another site', 'isCorrect': false},
+        {'text': 'Trigger client-side XSS', 'isCorrect': false},
+        {'text': 'Make the server send requests to internal or external systems', 'isCorrect': true},
+        {'text': 'Upload files to the server', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is the primary risk of broken access control?',
+      'questionText': 'Why is SSRF particularly dangerous in cloud environments?',
       'answers': [
-        {'text': 'Exposing sensitive data', 'isCorrect': false},
-        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
-        {'text': 'Slowing down the website', 'isCorrect': false},
-        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+        {'text': 'It can trigger CAPTCHA', 'isCorrect': false},
+        {'text': 'It reveals secret environment variables', 'isCorrect': true},
+        {'text': 'It logs out all users', 'isCorrect': false},
+        {'text': 'It disables UI elements', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'questionText': 'Which of the following targets is most at risk in SSRF attacks?',
       'answers': [
-        {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
-        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+        {'text': 'Internal admin APIs', 'isCorrect': true},
+        {'text': 'CSS files', 'isCorrect': false},
+        {'text': 'JavaScript libraries', 'isCorrect': false},
+        {'text': 'Client email addresses', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'questionText': 'Which header might be manipulated in SSRF attacks?',
       'answers': [
-        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
-        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
-        {'text': 'CSRF', 'isCorrect': false},
-        {'text': 'Buffer Overflow', 'isCorrect': false},
+        {'text': 'Authorization', 'isCorrect': false},
+        {'text': 'User-Agent', 'isCorrect': false},
+        {'text': 'Host', 'isCorrect': true},
+        {'text': 'Content-Type', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is insecure design?',
+      'questionText': 'What kind of SSRF protection is most effective?',
       'answers': [
-        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
-        {'text': 'Using outdated encryption', 'isCorrect': false},
-        {'text': 'Poor Documentation', 'isCorrect': false},
+        {'text': 'Displaying a warning', 'isCorrect': false},
+        {'text': 'Enabling user input echoing', 'isCorrect': false},
+        {'text': 'Validating and whitelisting destination URLs', 'isCorrect': true},
+        {'text': 'Logging requests only', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What does OWASP stand for?',
+      'questionText': 'What is Blind SSRF?',
       'answers': [
-        {'text': 'Open Web Application Security Project', 'isCorrect': true},
-        {'text': 'Online Web Application Security Program', 'isCorrect': false},
-        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
-        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+        {'text': 'When the attack fails', 'isCorrect': false},
+        {'text': 'SSRF with no visible response to attacker', 'isCorrect': true},
+        {'text': 'SSRF on the frontend', 'isCorrect': false},
+        {'text': 'SSRF that only affects mobile apps', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is the primary risk of broken access control?',
+      'questionText': 'How can DNS rebinding be used with SSRF?',
       'answers': [
-        {'text': 'Exposing sensitive data', 'isCorrect': false},
-        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
-        {'text': 'Slowing down the website', 'isCorrect': false},
-        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+        {'text': 'To speed up requests', 'isCorrect': false},
+        {'text': 'To change the font dynamically', 'isCorrect': false},
+        {'text': 'To bypass hostname validation', 'isCorrect': true},
+        {'text': 'To add session cookies', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'questionText': 'Which input field is most likely to be vulnerable to SSRF?',
       'answers': [
-        {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
-        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+        {'text': 'Search bar', 'isCorrect': false},
+        {'text': 'Contact form', 'isCorrect': false},
+        {'text': 'Image URL fetcher', 'isCorrect': true},
+        {'text': 'CAPTCHA', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'questionText': 'What is the most secure way to prevent SSRF in applications that fetch external URLs?',
       'answers': [
-        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
-        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
-        {'text': 'CSRF', 'isCorrect': false},
-        {'text': 'Buffer Overflow', 'isCorrect': false},
+        {'text': 'Use a proxy with strict allow-list', 'isCorrect': true},
+        {'text': 'Use GET requests only', 'isCorrect': false},
+        {'text': 'Limit request size', 'isCorrect': false},
+        {'text': 'Require form submission', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is insecure design?',
+      'questionText': 'What response behavior may indicate SSRF vulnerability?',
       'answers': [
-        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
-        {'text': 'Using outdated encryption', 'isCorrect': false},
-        {'text': 'Poor Documentation', 'isCorrect': false},
+        {'text': 'Redirecting to homepage', 'isCorrect': false},
+        {'text': 'Internal service data in the response', 'isCorrect': true},
+        {'text': '200 OK with no content', 'isCorrect': false},
+        {'text': 'Timeout during client request', 'isCorrect': false},
       ],
     },
   ];
@@ -127,7 +127,7 @@ class _QuizScreenState extends State<Quiz10Screen> {
     if (_selectedAnswerIndex == index) {
       return isCorrect ? Colors.green : Colors.red;
     }
-    if (isCorrect) return Colors.green; // Optionally highlight the correct one too
+    if (isCorrect) return Colors.green;
     return Colors.grey.shade200;
   }
 
@@ -166,23 +166,24 @@ class _QuizScreenState extends State<Quiz10Screen> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(vertical: 6),
                   child: ElevatedButton(
-                    onPressed: () =>
-                        _answerQuestion(isCorrect, index),
+                    onPressed: () => _answerQuestion(isCorrect, index),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                      _getButtonColor(isCorrect, index),
+                      backgroundColor: _getButtonColor(isCorrect, index),
                       foregroundColor: Colors.black,
-                      padding: EdgeInsets.symmetric(vertical: 14),
+                      padding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                      alignment: Alignment.center,
                     ),
                     child: Text(
                       text,
                       style: TextStyle(fontSize: 16),
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 );
-              },
-            )
-                .toList(),
+                },
+            ).toList(),
           ],
         ),
       )

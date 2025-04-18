@@ -8,93 +8,93 @@ class Quiz9Screen extends StatefulWidget {
 class _QuizScreenState extends State<Quiz9Screen> {
   final List<Map<String, Object>> _questions = [
     {
-      'questionText': 'What does OWASP stand for?',
+      'questionText': 'Why is log tampering dangerous?',
       'answers': [
-        {'text': 'Open Web Application Security Project', 'isCorrect': true},
-        {'text': 'Online Web Application Security Program', 'isCorrect': false},
-        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
-        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+        {'text': 'It improves app performance', 'isCorrect': false},
+        {'text': 'It hides evidence of attacks or unauthorized access', 'isCorrect': true},
+        {'text': 'It increases disk space', 'isCorrect': false},
+        {'text': 'It breaks UI design', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is the primary risk of broken access control?',
+      'questionText': 'What is a sign of inadequate monitoring?',
       'answers': [
-        {'text': 'Exposing sensitive data', 'isCorrect': false},
-        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
-        {'text': 'Slowing down the website', 'isCorrect': false},
-        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+        {'text': 'Alert fatigue', 'isCorrect': false},
+        {'text': 'Detecting every event', 'isCorrect': false},
+        {'text': 'Failing to notice a breach for weeks', 'isCorrect': true},
+        {'text': 'Receiving false positives', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'questionText': 'What kind of log should NOT be publicly accessible?',
       'answers': [
-        {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
-        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+        {'text': 'Application usage stats', 'isCorrect': false},
+        {'text': 'Authentication and access logs', 'isCorrect': true},
+        {'text': 'General error messages', 'isCorrect': false},
+        {'text': 'System uptime', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'questionText': 'Why should logs include timestamps and unique identifiers?',
       'answers': [
-        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
-        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
-        {'text': 'CSRF', 'isCorrect': false},
-        {'text': 'Buffer Overflow', 'isCorrect': false},
+        {'text': 'To improve UI responsiveness', 'isCorrect': false},
+        {'text': 'To make logs SEO-friendly', 'isCorrect': false},
+        {'text': 'To trace events and incidents accurately', 'isCorrect': true},
+        {'text': 'To reduce memory usage', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is insecure design?',
+      'questionText': 'Which logging practice violates user privacy?',
       'answers': [
-        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
-        {'text': 'Using outdated encryption', 'isCorrect': false},
-        {'text': 'Poor Documentation', 'isCorrect': false},
+        {'text': 'Logging failed logins', 'isCorrect': false},
+        {'text': 'Logging full credit card numbers', 'isCorrect': true},
+        {'text': 'Logging API request counts', 'isCorrect': false},
+        {'text': 'Logging login attempts', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What does OWASP stand for?',
+      'questionText': 'What is the main use of a SIEM (Security Information and Event Management) system?',
       'answers': [
-        {'text': 'Open Web Application Security Project', 'isCorrect': true},
-        {'text': 'Online Web Application Security Program', 'isCorrect': false},
-        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
-        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+        {'text': 'Create user dashboards', 'isCorrect': false},
+        {'text': 'Centralize logs and detect anomalies', 'isCorrect': true},
+        {'text': 'Encrypt all logs', 'isCorrect': false},
+        {'text': 'Host static assets', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is the primary risk of broken access control?',
+      'questionText': 'What’s the consequence of not storing logs securely?',
       'answers': [
-        {'text': 'Exposing sensitive data', 'isCorrect': false},
-        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
-        {'text': 'Slowing down the website', 'isCorrect': false},
-        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+        {'text': 'UI freezes', 'isCorrect': false},
+        {'text': 'Loss of metadata', 'isCorrect': false},
+        {'text': 'Log exposure or tampering by attackers', 'isCorrect': true},
+        {'text': 'Poor animation performance', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'questionText': 'What is a good retention policy for security logs?',
       'answers': [
-        {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
-        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+        {'text': 'Store logs only for 24 hours', 'isCorrect': false},
+        {'text': 'Keep logs indefinitely', 'isCorrect': false},
+        {'text': 'Retain logs as per regulatory or compliance requirements', 'isCorrect': true},
+        {'text': 'Clear logs on each restart', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'questionText': 'Why is alert tuning necessary in monitoring?',
       'answers': [
-        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
-        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
-        {'text': 'CSRF', 'isCorrect': false},
-        {'text': 'Buffer Overflow', 'isCorrect': false},
+        {'text': 'To disable notifications', 'isCorrect': false},
+        {'text': 'To avoid unnecessary alerts and false positives', 'isCorrect': true},
+        {'text': 'To pause logging', 'isCorrect': false},
+        {'text': 'To encrypt logs', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is insecure design?',
+      'questionText': 'What type of event should always be logged in secure apps?',
       'answers': [
-        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
-        {'text': 'Using outdated encryption', 'isCorrect': false},
-        {'text': 'Poor Documentation', 'isCorrect': false},
+        {'text': 'UI layout change', 'isCorrect': false},
+        {'text': 'Failed login attempts', 'isCorrect': true},
+        {'text': 'Image uploads', 'isCorrect': false},
+        {'text': 'Font size adjustments', 'isCorrect': false},
       ],
     },
   ];
@@ -127,7 +127,7 @@ class _QuizScreenState extends State<Quiz9Screen> {
     if (_selectedAnswerIndex == index) {
       return isCorrect ? Colors.green : Colors.red;
     }
-    if (isCorrect) return Colors.green; // Optionally highlight the correct one too
+    if (isCorrect) return Colors.green;
     return Colors.grey.shade200;
   }
 
@@ -166,17 +166,19 @@ class _QuizScreenState extends State<Quiz9Screen> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(vertical: 6),
                   child: ElevatedButton(
-                    onPressed: () =>
-                        _answerQuestion(isCorrect, index),
+                    onPressed: () => _answerQuestion(isCorrect, index),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                      _getButtonColor(isCorrect, index),
+                      backgroundColor: _getButtonColor(isCorrect, index),
                       foregroundColor: Colors.black,
-                      padding: EdgeInsets.symmetric(vertical: 14),
+                      padding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                      alignment: Alignment.center,
                     ),
                     child: Text(
                       text,
                       style: TextStyle(fontSize: 16),
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 );

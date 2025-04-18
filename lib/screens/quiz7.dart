@@ -8,93 +8,93 @@ class Quiz7Screen extends StatefulWidget {
 class _QuizScreenState extends State<Quiz7Screen> {
   final List<Map<String, Object>> _questions = [
     {
-      'questionText': 'What does OWASP stand for?',
+      'questionText': 'What does an attacker exploit in a brute-force attack?',
       'answers': [
-        {'text': 'Open Web Application Security Project', 'isCorrect': true},
-        {'text': 'Online Web Application Security Program', 'isCorrect': false},
-        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
-        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
+        {'text': 'Server hardware', 'isCorrect': false},
+        {'text': 'Rate limits', 'isCorrect': false},
+        {'text': 'Repeated login attempts with guessed credentials', 'isCorrect': true},
+        {'text': 'User email verification', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'What is the primary risk of broken access control?',
+      'questionText': 'Which method can prevent session hijacking?',
       'answers': [
-        {'text': 'Exposing sensitive data', 'isCorrect': false},
-        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
-        {'text': 'Slowing down the website', 'isCorrect': false},
-        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
+        {'text': 'Using short usernames', 'isCorrect': false},
+        {'text': 'Encrypting session tokens and using HTTPS', 'isCorrect': true},
+        {'text': 'Enabling auto-login', 'isCorrect': false},
+        {'text': 'Storing credentials in local storage', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which of the following is an insecure cryptographic practice?',
+      'questionText': 'What does password spraying involve?',
       'answers': [
-        {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
-        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
+        {'text': 'Flooding a login form with random passwords', 'isCorrect': false},
+        {'text': 'Using a few common passwords across many accounts', 'isCorrect': true},
+        {'text': 'Guessing passwords based on usernames', 'isCorrect': false},
+        {'text': 'Bypassing 2FA', 'isCorrect': false},
       ],
     },
     {
-      'questionText': 'Which attack involves inserting malicious SQL queries?',
+      'questionText': 'What is the impact of missing account lockout mechanisms?',
       'answers': [
-        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
-        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
+        {'text': 'System performance drops', 'isCorrect': false},
+        {'text': 'Allows brute-force and password guessing attacks', 'isCorrect': true},
+        {'text': 'Exposes cookies', 'isCorrect': false},
+        {'text': 'Increases UI bugs', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What’s a secure session timeout strategy?',
+      'answers': [
+        {'text': 'Sessions never expire', 'isCorrect': false},
+        {'text': 'Sessions expire after a long idle time', 'isCorrect': false},
+        {'text': 'Short timeout with user re-authentication', 'isCorrect': true},
+        {'text': 'Timeouts triggered only by clicking logout', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Which is not a secure password requirement?',
+      'answers': [
+        {'text': 'Minimum 8 characters', 'isCorrect': false},
+        {'text': 'Includes uppercase, lowercase, numbers, and symbols', 'isCorrect': false},
+        {'text': 'Use of dictionary words', 'isCorrect': true},
+        {'text': 'No reuse of previous passwords', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'Why is 2FA (Two-Factor Authentication) effective?',
+      'answers': [
+        {'text': 'It prevents all XSS attacks', 'isCorrect': false},
+        {'text': 'It requires something you know + something you have', 'isCorrect': true},
+        {'text': 'It improves UI flow', 'isCorrect': false},
+        {'text': 'It speeds up login', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is an example of improper credential storage?',
+      'answers': [
+        {'text': 'Hashed and salted passwords', 'isCorrect': false},
+        {'text': 'Encrypted passwords using bcrypt', 'isCorrect': false},
+        {'text': 'Storing plaintext passwords in a database', 'isCorrect': true},
+        {'text': 'Using environment variables', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What is the main purpose of identity management systems?',
+      'answers': [
+        {'text': 'Generate reports', 'isCorrect': false},
+        {'text': 'Store email addresses', 'isCorrect': false},
+        {'text': 'Manage user access, roles, and authentication', 'isCorrect': true},
+        {'text': 'Enhance UI appearance', 'isCorrect': false},
+      ],
+    },
+    {
+      'questionText': 'What vulnerability occurs when session tokens are not invalidated after logout?',
+      'answers': [
         {'text': 'CSRF', 'isCorrect': false},
-        {'text': 'Buffer Overflow', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'What is insecure design?',
-      'answers': [
-        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
-        {'text': 'Using outdated encryption', 'isCorrect': false},
-        {'text': 'Poor Documentation', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'What does OWASP stand for?',
-      'answers': [
-        {'text': 'Open Web Application Security Project', 'isCorrect': true},
-        {'text': 'Online Web Application Security Program', 'isCorrect': false},
-        {'text': 'Operational Web Application Safety Project', 'isCorrect': false},
-        {'text': 'Open Web Application Safety Protocol', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'What is the primary risk of broken access control?',
-      'answers': [
-        {'text': 'Exposing sensitive data', 'isCorrect': false},
-        {'text': 'Allowing unauthorized access ', 'isCorrect': true},
-        {'text': 'Slowing down the website', 'isCorrect': false},
-        {'text': 'Enabling Brute force attacks', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'Which of the following is an insecure cryptographic practice?',
-      'answers': [
-        {'text': 'Using AES-256', 'isCorrect': false},
-        {'text': 'Hashing passwords with bcrypt', 'isCorrect': false},
-        {'text': 'Implementing TLS for data transmission', 'isCorrect': false},
-        {'text': 'Storing passwords in plain text', 'isCorrect': true},
-      ],
-    },
-    {
-      'questionText': 'Which attack involves inserting malicious SQL queries?',
-      'answers': [
-        {'text': 'Cross-Site Scripting (XSS)', 'isCorrect': false},
-        {'text': 'SQL Injection (SQLi) ', 'isCorrect': true},
-        {'text': 'CSRF', 'isCorrect': false},
-        {'text': 'Buffer Overflow', 'isCorrect': false},
-      ],
-    },
-    {
-      'questionText': 'What is insecure design?',
-      'answers': [
-        {'text': 'Flaws in the application architecture  ', 'isCorrect': true},
-        {'text': 'Security vulnerabilities due to weak coding practices', 'isCorrect': false},
-        {'text': 'Using outdated encryption', 'isCorrect': false},
-        {'text': 'Poor Documentation', 'isCorrect': false},
+        {'text': 'Session fixation', 'isCorrect': false},
+        {'text': 'Session reuse or hijacking', 'isCorrect': true},
+        {'text': 'Open redirect', 'isCorrect': false},
       ],
     },
   ];
@@ -166,17 +166,19 @@ class _QuizScreenState extends State<Quiz7Screen> {
                   width: double.infinity,
                   margin: const EdgeInsets.symmetric(vertical: 6),
                   child: ElevatedButton(
-                    onPressed: () =>
-                        _answerQuestion(isCorrect, index),
+                    onPressed: () => _answerQuestion(isCorrect, index),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                      _getButtonColor(isCorrect, index),
+                      backgroundColor: _getButtonColor(isCorrect, index),
                       foregroundColor: Colors.black,
-                      padding: EdgeInsets.symmetric(vertical: 14),
+                      padding: EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                      alignment: Alignment.center,
                     ),
                     child: Text(
                       text,
                       style: TextStyle(fontSize: 16),
+                      softWrap: true,
+                      overflow: TextOverflow.visible,
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 );
