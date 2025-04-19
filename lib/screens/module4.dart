@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';  // To access Clipboard
+import 'package:fl_chart/fl_chart.dart';
 
 class Module4Screen extends StatelessWidget {
   const Module4Screen({super.key});
@@ -33,20 +33,10 @@ class Module4Screen extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 10),
-                  Text(
-                    'Unlike implementation bugs, insecure design is a structural issue caused by flawed logic and decisions during the planning and design phases of software development.',
-                    style: bodyTextStyle(),
-                    textAlign: TextAlign.justify,
-                  ),
-                  const SizedBox(height: 16),
                   sectionTitle('Common Causes of Insecure Design:'),
-                  sectionBulletPoints([
-                    '1. Lack of input validation and sanitization.',
-                    '2. Improper session management and authentication logic.',
-                    '3. Insecure storage and transmission of sensitive data.',
-                    '4. Absence of threat modeling during design.',
-                    '5. No separation of duties or least privilege enforcement.',
-                  ]),
+                  // Add Pie Chart Here
+                  const SizedBox(height: 16),
+                  interactivePieChart(),
                   const SizedBox(height: 16),
                   sectionTitle('Real-World Example: Heartbleed'),
                   Text(
@@ -65,11 +55,11 @@ class Module4Screen extends StatelessWidget {
                   ]),
                   const SizedBox(height: 16),
                   sectionTitle('Interactive Labs and Resources:'),
-                  simpleResourceLink('TryHackMe - Insecure Design Labs', context),
-                  simpleResourceLink('PortSwigger Labs - Insecure Design', context),
+                  simpleResourceLink('TryHackMe - Insecure Design Labs'),
+                  simpleResourceLink('PortSwigger Labs - Insecure Design'),
                   const SizedBox(height: 16),
                   sectionTitle('Watch & Learn:'),
-                  simpleResourceLink('Watch: Insecure Design Explained (YouTube)', context),
+                  simpleResourceLink('Watch: Insecure Design Explained (YouTube)'),
                 ],
               ),
             ),
@@ -117,68 +107,138 @@ class Module4Screen extends StatelessWidget {
     );
   }
 
-  Widget simpleResourceLink(String title, BuildContext context) {
+  Widget simpleResourceLink(String title) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: GestureDetector(
-        onTap: () => _showCopyDialog(context, title),
-        child: Row(
-          children: [
-            const Icon(Icons.link, color: Colors.blue),
-            const SizedBox(width: 10),
-            Expanded(
-              child: Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w500,
-                  decoration: TextDecoration.underline,
-                  color: Colors.blueAccent,
-                ),
+      child: Row(
+        children: [
+          const Icon(Icons.link, color: Colors.blue),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.w500,
+                decoration: TextDecoration.underline,
+                color: Colors.blueAccent,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  // Dialog to show URL and allow copying
-  void _showCopyDialog(BuildContext context, String title) {
-    String url = '';
-    if (title.contains('YouTube')) {
-      url = 'https://youtu.be/6AlEzBCsVso'; // YouTube video URL
-    } else if (title.contains('TryHackMe')) {
-      url = 'https://tryhackme.com'; // Example URL
-    } else if (title.contains('PortSwigger')) {
-      url = 'https://portswigger.net'; // Example URL
-    }
-
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Copy and Paste URL in Browser'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
+  // Create the Interactive Pie Chart Widget
+  Widget interactivePieChart() {
+    return Column(
+      children: [
+        SizedBox(
+          height: 200,
+          child: PieChart(
+            PieChartData(
+              sectionsSpace: 2, // Space between each section
+              centerSpaceRadius: 40, // Space in the center of the pie chart
+              sections: [
+                PieChartSectionData(
+                  color: Colors.red,
+                  value: 20,
+                  title: '', // No title in the section, percentage only inside
+                  radius: 40,
+                  titleStyle: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold, // Make labels bold
+                    color: Colors.white,
+                  ),
+                ),
+                PieChartSectionData(
+                  color: Colors.orange,
+                  value: 15,
+                  title: '',
+                  radius: 40,
+                  titleStyle: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                PieChartSectionData(
+                  color: Colors.yellow,
+                  value: 25,
+                  title: '',
+                  radius: 40,
+                  titleStyle: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                PieChartSectionData(
+                  color: Colors.green,
+                  value: 10,
+                  title: '',
+                  radius: 40,
+                  titleStyle: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                PieChartSectionData(
+                  color: Colors.blue,
+                  value: 30,
+                  title: '',
+                  radius: 40,
+                  titleStyle: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        // Legend section below the chart
+        Center(
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 20, // space between items horizontally
+            runSpacing: 10, // space between rows
             children: [
-              Text(url),
-              const SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  Clipboard.setData(ClipboardData(text: url));
-                  Navigator.of(context).pop();
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('URL copied to clipboard!')),
-                  );
-                },
-                child: const Text('Copy URL'),
-              ),
+              legendItem('Input Validation', Colors.red),
+              legendItem('Session Mgmt', Colors.orange),
+              legendItem('Insecure Storage', Colors.yellow),
+              legendItem('Threat Modeling', Colors.green),
+              legendItem('Separation of Duties', Colors.blue),
             ],
           ),
-        );
-      },
+        )
+      ],
+    );
+  }
+
+// Helper method for displaying legend
+  Widget legendItem(String label, Color color) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          width: 16,
+          height: 16,
+          color: color,
+        ),
+        const SizedBox(width: 6),
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
     );
   }
 }
