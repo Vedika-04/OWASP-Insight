@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Module3Screen extends StatelessWidget {
+  const Module3Screen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('A03. Injection Vulnerabilities', style: TextStyle(color: Colors.white)),
+        title: const Text('A3. Injection', style: TextStyle(color: Colors.white)),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Image Section (optional, can be added if needed)
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(2.0),
               child: Image.asset(
-                'assets/images/injection.png', // Replace with actual image if needed
-                height: 300,
+                'assets/images/injection.png', // Add your Injection-related image to assets
+                height: 200,
               ),
             ),
             Padding(
@@ -24,71 +26,47 @@ class Module3Screen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Overview Section
                   sectionTitle('Overview:'),
                   Text(
-                    'Injection attacks involve injecting malicious code into a vulnerable application. The attacker gains control over the application or system, which can lead to severe consequences like data loss, unauthorized access, and more.',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+                    'Injection attacks involve inserting malicious code into a vulnerable application, causing it to execute unintended commands. This can give attackers control over the application or even the underlying system.',
+                    style: bodyTextStyle(),
                     textAlign: TextAlign.justify,
                   ),
-                  SizedBox(height: 10),
-                  Text(
-                    'This vulnerability is common in applications that fail to properly validate user input or sanitize data before interacting with systems like databases, servers, and other external components.',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Montserrat',
-                    ),
-                    textAlign: TextAlign.justify,
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    'Injection vulnerabilities can be found in several areas, including SQL injection, XSS, OS command injection, LDAP injection, and more.',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Montserrat',
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    '"The Open Web Application Security Project (OWASP) lists injection attacks as one of the top security risks in web applications."',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.black,
-                    ),
-                    textAlign: TextAlign.justify,
-                  ),
-                  SizedBox(height: 20),
-
-                  // Impact and Risks Section
-                  sectionTitle('Impact and Risks of Injection Attacks:'),
+                  const SizedBox(height: 16),
+                  sectionTitle('Types of Injection Attacks:'),
                   sectionBulletPoints([
-                    '1. Injection attacks can result in unauthorized access to sensitive data, system takeover, and potential data loss or theft.',
-                    '2. The risk is particularly high in environments where user input is not adequately validated or sanitized, allowing attackers to manipulate queries and commands.',
-                    '3. Exploiting injection vulnerabilities can lead to a loss of system integrity, data breaches, and financial or reputational damage.',
+                    '• SQL Injection: Alters SQL queries to extract or modify database data.',
+                    '• Cross-Site Scripting (XSS): Injects scripts into web pages to hijack sessions or redirect users.',
+                    '• OS Command Injection: Executes arbitrary system commands through a vulnerable server.',
+                    '• LDAP Injection: Manipulates LDAP queries to access or modify directory data.',
+                    '• CRLF Injection: Injects carriage return and line feed characters to hijack HTTP responses.',
+                    '• Host Header Injection: Alters HTTP host headers to perform cache poisoning or reset passwords.',
+                    '• Mail Command Injection: Targets mail servers to send spam or conduct phishing.',
                   ]),
-                  SizedBox(height: 16),
-
-                  // Examples and Types Section
-                  sectionTitle('Examples and Types of Injection Attacks:'),
+                  const SizedBox(height: 16),
+                  sectionTitle('Finding Injection Vulnerabilities:'),
                   sectionBulletPoints([
-                    '1. SQL Injection:',
-                    'Manipulating SQL queries to access or modify data.',
-                    'Use parameterized queries to prevent SQL injection.',
-                    '2. Cross-Site Scripting (XSS):',
-                    'Injecting malicious scripts into web pages to hijack user sessions.',
-                    'Sanitize input and use secure coding practices to prevent XSS.',
-                    '3. OS Command Injection:',
-                    'Injecting OS-level commands to execute on the server.',
-                    'Avoid concatenating user input into system commands.',
+                    '• Add a single quote ( \') in input fields and observe error messages.',
+                    '• Use tools like SQLMAP for SQL injection detection.',
+                    '• Insert test scripts into fields to check for XSS vulnerabilities.',
+                    '• Review code handling XML/JSON for unsafe request-making methods.',
                   ]),
+                  const SizedBox(height: 16),
+                  sectionTitle('Prevention Techniques:'),
+                  sectionBulletPoints([
+                    '1. Authorize and validate users securely (use MFA, auditing).',
+                    '2. Prevent dangerous file uploads (restrict macros and extensions).',
+                    '3. Sanitize and validate all user inputs thoroughly.',
+                    '4. Use prepared statements for database queries.',
+                    '5. Implement Content Security Policies (CSP) to mitigate XSS.',
+                  ]),
+                  const SizedBox(height: 16),
+                  sectionTitle('Interactive Labs and Resources:'),
+                  simpleResourceLink('TryHackMe: Injection Room - https://tryhackme.com', context),
+                  simpleResourceLink('PortSwigger Web Security Academy - Injection Labs', context),
+                  const SizedBox(height: 16),
+                  sectionTitle('Watch & Learn:'),
+                  simpleResourceLink('Watch: Injection Attacks Explained (YouTube)', context),
                 ],
               ),
             ),
@@ -101,7 +79,7 @@ class Module3Screen extends StatelessWidget {
   Widget sectionTitle(String title) {
     return Text(
       title,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold,
         fontFamily: 'Montserrat',
@@ -110,15 +88,22 @@ class Module3Screen extends StatelessWidget {
     );
   }
 
+  TextStyle bodyTextStyle() {
+    return const TextStyle(
+      fontSize: 18,
+      fontFamily: 'Montserrat',
+    );
+  }
+
   Widget sectionBulletPoints(List<String> points, {double gap = 10.0}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: points.map((point) {
         return Padding(
-          padding: EdgeInsets.symmetric(vertical: gap),
+          padding: EdgeInsets.symmetric(vertical: gap / 2),
           child: Text(
             point,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w400,
@@ -126,6 +111,70 @@ class Module3Screen extends StatelessWidget {
           ),
         );
       }).toList(),
+    );
+  }
+
+  Widget simpleResourceLink(String title, BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: GestureDetector(
+        onTap: () => _showCopyDialog(context, title),
+        child: Row(
+          children: [
+            const Icon(Icons.link, color: Colors.blue),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w500,
+                  decoration: TextDecoration.underline,
+                  color: Colors.blueAccent,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showCopyDialog(BuildContext context, String title) {
+    String url = '';
+    if (title.contains('YouTube')) {
+      url = 'https://www.youtube.com/watch?v=8XVHftQskxk&t=7s'; // Replace with real YouTube URL if you have one
+    } else if (title.contains('TryHackMe')) {
+      url = 'https://tryhackme.com'; // Example URL
+    } else if (title.contains('PortSwigger')) {
+      url = 'https://portswigger.net'; // Example URL
+    }
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Copy and Paste URL in Browser'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(url),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: url));
+                  Navigator.of(context).pop();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('URL copied to clipboard!')),
+                  );
+                },
+                child: const Text('Copy URL'),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Module1Screen extends StatelessWidget {
+  const Module1Screen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('A01. Broken Access Control', style: TextStyle(color: Colors.white)),
+        title: const Text('A1. Broken Access Control', style: TextStyle(color: Colors.white)),
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(2.0),
               child: Image.asset(
-                'assets/images/broken.jpg',
-                height: 300,
+                'assets/images/broken.jpg', // Add your Broken Access Control-related image to assets
+                height: 200,
               ),
             ),
             Padding(
@@ -23,68 +26,54 @@ class Module1Screen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Overview Section
                   sectionTitle('Overview:'),
                   Text(
-                    'Broken access control vulnerability is a security flaw that allows unauthorized users to access, modify, or delete data they shouldn’t have access to.',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
+                    'Broken Access Control occurs when users are able to act outside of their intended permissions. If restrictions on what authenticated users are allowed to do are not properly enforced, attackers can exploit these flaws to access unauthorized functionality or data, such as accessing other users\' accounts, viewing sensitive files, or modifying other users\' data.',
+                    style: bodyTextStyle(),
                     textAlign: TextAlign.justify,
                   ),
-                  SizedBox(height: 10),
-                  Text(
-                    'This vulnerability is considered one of the most critical web application security risks. It occurs when an application fails to properly enforce access controls, allowing attackers to bypass authorization and perform tasks as if they were legitimate users. ',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Montserrat',
-                    ),
-                    textAlign: TextAlign.justify,
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                      'This vulnerability can exist in various forms, such as inadequate session management, improper enforcement of role-based access controls, or insecure direct object references (IDOR).',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Montserrat',
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Text(
-                    '"The Open Web Application Security Project (OWASP) lists broken access control as the #1 critical web application security risk (according to the OWASP Top 10 list, updated 2021)"',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.black,
-                    ),
-                    textAlign: TextAlign.justify,
-                  ),
-                  SizedBox(height: 20),
-
-                  // Key Concepts Section
-                  sectionTitle('Impact and Risks of Broken Access Control:'),
+                  const SizedBox(height: 16),
+                  sectionTitle('Common Examples of Broken Access Control:'),
                   sectionBulletPoints([
-                    '1. The impact of broken access control can be catastrophic for organizations.Unauthorized access '
-                        'to sensitive data can lead to data breaches, identity theft, financial loss, and damage to a '
-                        'company’s reputation.',
-
-                    '2. The risk associated with broken access control is high because it directly affects the confidentiality, integrity, and availability of data. An attacker exploiting this vulnerability can potentially access, modify, or delete any data on the system. This includes user data, system data, application data, and more. The larger the system and the more sensitive the data, the higher the risk.',
-                    '3. Broken access control is a vulnerability that can’t be ignored, and organizations must take proactive steps to identify and mitigate it. This involves regular security testing, proper design and implementation of access controls, and continuous monitoring and updating of security measures.',
+                    '• URL tampering to access admin pages. (Eg: Changing /user/profile to /admin/dashboard)',
+                    '• Bypassing client-side security controls using tools like Burp Suite.',
+                    '• Modifying metadata like tokens or cookies to escalate privileges.',
+                    '• Force browsing to authenticated pages without logging in.',
+                    '• IDOR (Insecure Direct Object References) vulnerabilities.',
+                    '• Elevation of privileges by modifying JWT tokens without validation.',
                   ]),
-                  SizedBox(height: 16),
-
-                  // Mitigation Strategies Section
-                  sectionTitle('Examples and Types of Broken Access Control Attacks:'),
+                  const SizedBox(height: 16),
+                  sectionTitle('Real-World Scenarios:'),
                   sectionBulletPoints([
-                    '1. URL Manipulation:-',
-                    'Ensure proper input validation and data sanitization.',
-                    'Use secure session management practices.',
+                    '• An attacker changes their account ID in the API request to access another user’s account.',
+                    '• Accessing admin functionality just by visiting hidden URLs.',
+                    '• Unauthorized users gaining access to sensitive files like salary slips, patient records, etc.',
                   ]),
+                  const SizedBox(height: 16),
+                  sectionTitle('Finding Broken Access Control Vulnerabilities:'),
+                  sectionBulletPoints([
+                    '• Manually test all API endpoints by altering parameters.',
+                    '• Try accessing functions without proper authentication.',
+                    '• Review application logic for improper permission checks.',
+                    '• Use automated vulnerability scanners to detect IDOR and access control flaws.',
+                  ]),
+                  const SizedBox(height: 16),
+                  sectionTitle('Prevention Techniques:'),
+                  sectionBulletPoints([
+                    '1. Deny access by default — allow only what is explicitly permitted.',
+                    '2. Enforce server-side access control checks for every request.',
+                    '3. Disable web server directory listing and make sure file metadata is protected.',
+                    '4. Validate user roles and permissions strictly on the server side.',
+                    '5. Use secure frameworks and libraries that provide robust access control mechanisms.',
+                    '6. Implement proper session management and strong authorization mechanisms.',
+                  ]),
+                  const SizedBox(height: 16),
+                  sectionTitle('Interactive Labs and Resources:'),
+                  simpleResourceLink('TryHackMe: Broken Access Control Room - https://tryhackme.com', context),
+                  simpleResourceLink('PortSwigger Web Security Academy - Access Control Labs', context),
+                  const SizedBox(height: 16),
+                  sectionTitle('Watch & Learn:'),
+                  simpleResourceLink('Watch: Broken Access Control Explained (YouTube)', context),
                 ],
               ),
             ),
@@ -97,7 +86,7 @@ class Module1Screen extends StatelessWidget {
   Widget sectionTitle(String title) {
     return Text(
       title,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold,
         fontFamily: 'Montserrat',
@@ -106,15 +95,22 @@ class Module1Screen extends StatelessWidget {
     );
   }
 
+  TextStyle bodyTextStyle() {
+    return const TextStyle(
+      fontSize: 18,
+      fontFamily: 'Montserrat',
+    );
+  }
+
   Widget sectionBulletPoints(List<String> points, {double gap = 10.0}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: points.map((point) {
         return Padding(
-          padding: EdgeInsets.symmetric(vertical: gap),
+          padding: EdgeInsets.symmetric(vertical: gap / 2),
           child: Text(
             point,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 18,
               fontFamily: 'Montserrat',
               fontWeight: FontWeight.w400,
@@ -122,6 +118,70 @@ class Module1Screen extends StatelessWidget {
           ),
         );
       }).toList(),
+    );
+  }
+
+  Widget simpleResourceLink(String title, BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: GestureDetector(
+        onTap: () => _showCopyDialog(context, title),
+        child: Row(
+          children: [
+            const Icon(Icons.link, color: Colors.blue),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w500,
+                  decoration: TextDecoration.underline,
+                  color: Colors.blueAccent,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showCopyDialog(BuildContext context, String title) {
+    String url = '';
+    if (title.contains('YouTube')) {
+      url = 'https://www.youtube.com/watch?v=_jz5qFWhLcg'; // Example real YouTube link
+    } else if (title.contains('TryHackMe')) {
+      url = 'https://tryhackme.com'; // Example URL
+    } else if (title.contains('PortSwigger')) {
+      url = 'https://portswigger.net'; // Example URL
+    }
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Copy and Paste URL in Browser'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(url),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: url));
+                  Navigator.of(context).pop();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('URL copied to clipboard!')),
+                  );
+                },
+                child: const Text('Copy URL'),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
