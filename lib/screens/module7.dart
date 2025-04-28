@@ -150,9 +150,9 @@ class Module7Screen extends StatelessWidget {
     if (title.contains('YouTube')) {
       url = 'https://www.youtube.com/watch?v=QYADlbXQesE'; // YouTube video URL
     } else if (title.contains('TryHackMe')) {
-      url = 'https://tryhackme.com'; // Example URL
+      url = 'https://tryhackme.com/module/authentication'; // Example URL
     } else if (title.contains('PortSwigger')) {
-      url = 'https://portswigger.net'; // Example URL
+      url = 'https://portswigger.net/web-security/all-labs#oauth-authentication'; // Example URL
     }
 
     showDialog(

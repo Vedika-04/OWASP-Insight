@@ -141,7 +141,7 @@ class Module4Screen extends StatelessWidget {
     if (title.contains('YouTube')) {
       url = 'https://youtu.be/6AlEzBCsVso'; // YouTube video URL
     } else if (title.contains('TryHackMe')) {
-      url = 'https://tryhackme.com'; // Example URL
+      url = 'https://tryhackme.com/room/owasptop102021'; // Example URL
     } else if (title.contains('PortSwigger')) {
       url = 'https://portswigger.net'; // Example URL
     }

@@ -146,9 +146,9 @@ class Module3Screen extends StatelessWidget {
     if (title.contains('YouTube')) {
       url = 'https://www.youtube.com/watch?v=8XVHftQskxk&t=7s'; // Replace with real YouTube URL if you have one
     } else if (title.contains('TryHackMe')) {
-      url = 'https://tryhackme.com'; // Example URL
+      url = 'https://tryhackme.com/room/sqlinjectionlm'; // Example URL
     } else if (title.contains('PortSwigger')) {
-      url = 'https://portswigger.net'; // Example URL
+      url = 'https://portswigger.net/web-security/all-labs#sql-injection'; // Example URL
     }
 
     showDialog(

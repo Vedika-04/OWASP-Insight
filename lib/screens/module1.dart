@@ -153,9 +153,9 @@ class Module1Screen extends StatelessWidget {
     if (title.contains('YouTube')) {
       url = 'https://www.youtube.com/watch?v=_jz5qFWhLcg'; // Example real YouTube link
     } else if (title.contains('TryHackMe')) {
-      url = 'https://tryhackme.com'; // Example URL
+      url = 'https://tryhackme.com/room/owaspbrokenaccesscontrol'; // Example URL
     } else if (title.contains('PortSwigger')) {
-      url = 'https://portswigger.net'; // Example URL
+      url = 'https://portswigger.net/web-security/access-control/lab-unprotected-admin-functionality-with-unpredictable-url'; // Example URL
     }
 
     showDialog(

@@ -113,7 +113,7 @@ class Module2Screen extends StatelessWidget {
                   const SizedBox(height: 16),
                   sectionTitle('Interactive Labs and Resources:'),
                   simpleResourceLink('TryHackMe: Cryptographic Failures Room - https://tryhackme.com', context),
-                  simpleResourceLink('PortSwigger Web Security Academy - Cryptographic Failures Labs', context),
+                  simpleResourceLink('TryHackMe - Cryptographic Failures Labs', context),
                   const SizedBox(height: 16),
                   sectionTitle('Watch & Learn:'),
                   simpleResourceLink('Watch: Cryptographic Failures Explained (YouTube)', context),
@@ -196,9 +196,9 @@ class Module2Screen extends StatelessWidget {
     if (title.contains('YouTube')) {
       url = 'https://www.youtube.com/watch?v=O6dCX4P6OwU'; // Example real YouTube link
     } else if (title.contains('TryHackMe')) {
-      url = 'https://tryhackme.com'; // Example URL
-    } else if (title.contains('PortSwigger')) {
-      url = 'https://portswigger.net'; // Example URL
+      url = 'https://tryhackme.com/module/cryptofailures'; // Example URL
+    } else if (title.contains('TryHackMe')) {
+      url = 'https://tryhackme.com/room/owasptop102021'; // Example URL
     }
 
     showDialog(
