@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Module8Screen extends StatelessWidget {
   const Module8Screen({super.key});
@@ -65,12 +66,12 @@ class Module8Screen extends StatelessWidget {
                   ]),
                   const SizedBox(height: 16),
                   sectionTitle('Interactive Labs and Resources:'),
-                  simpleResourceLink('OWASP Dependency Check - Tool Overview'),
-                  simpleResourceLink('CycloneDX - Software Bill of Materials (SBOM)'),
-                  simpleResourceLink('TryHackMe: Supply Chain Attack Walkthrough'),
+                  simpleResourceLink('OWASP Dependency Check - Tool Overview',context),
+                  simpleResourceLink('CycloneDX - Software Bill of Materials (SBOM)',context),
+                  simpleResourceLink('TryHackMe: Supply Chain Attack Walkthrough',context),
                   const SizedBox(height: 16),
                   sectionTitle('Watch & Learn:'),
-                  simpleResourceLink('Watch: Understanding Software Supply Chain Attacks (YouTube)'),
+                  simpleResourceLink('Watch: Understanding Software Supply Chain Attacks (YouTube)',context),
                 ],
               ),
             ),
@@ -118,27 +119,68 @@ class Module8Screen extends StatelessWidget {
     );
   }
 
-  Widget simpleResourceLink(String title) {
+  Widget simpleResourceLink(String title, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(
-        children: [
-          const Icon(Icons.link, color: Colors.blue),
-          const SizedBox(width: 10),
-          Expanded(
-            child: Text(
-              title,
-              style: const TextStyle(
-                fontSize: 18,
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.w500,
-                decoration: TextDecoration.underline,
-                color: Colors.blueAccent,
+      child: GestureDetector(
+        onTap: () => _showCopyDialog(context, title),
+        child: Row(
+          children: [
+            const Icon(Icons.link, color: Colors.blue),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'Montserrat',
+                  fontWeight: FontWeight.w500,
+                  decoration: TextDecoration.underline,
+                  color: Colors.blueAccent,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
+    );
+  }
+
+  // Dialog to show URL and allow copying
+  void _showCopyDialog(BuildContext context, String title) {
+    String url = '';
+    if (title.contains('YouTube')) {
+      url = 'https://www.youtube.com/watch?v=TwfLvG0D6dc'; // YouTube video URL
+    } else if (title.contains('TryHackMe')) {
+      url = 'https://tryhackme.com'; // Example URL
+    } else if (title.contains('PortSwigger')) {
+      url = 'https://portswigger.net'; // Example URL
+    }
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Copy and Paste URL in Browser'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(url),
+              const SizedBox(height: 10),
+              ElevatedButton(
+                onPressed: () {
+                  Clipboard.setData(ClipboardData(text: url));
+                  Navigator.of(context).pop();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('URL copied to clipboard!')),
+                  );
+                },
+                child: const Text('Copy URL'),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }
